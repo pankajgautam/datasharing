@@ -8,7 +8,7 @@ Just head over to the GitHub page and click the "Fork" button. It's just that si
 
 ```shell
 # Clone your fork to your local machine
-$ git clone git@github.com:USERNAME/FORKED-PROJECT.git
+git clone git@github.com:USERNAME/FORKED-PROJECT.git
 ```
 
 ## Keeping Your Fork Up to Date
@@ -16,14 +16,41 @@ $ git clone git@github.com:USERNAME/FORKED-PROJECT.git
 While this isn't an absolutely necessary step, if you plan on doing anything more than just a tiny quick fix, you'll want to make sure you keep your fork up to date by tracking the original "upstream" repo that you forked. To do this, you'll need to add a remote:
 
 ```shell
-# Add upstream repo to list of remotes
-$ git remote add upstream https://github.com/UPSTREAM-USER/ORIGINAL-PROJECT.git
+# Add 'upstream' repo to list of remotes
+git remote add upstream https://github.com/UPSTREAM-USER/ORIGINAL-PROJECT.git
 
-# Verify the new remote
-$ git remote -v
+# Verify the new remote named 'upstream'
+git remote -v
 ```
 
+Whenever you want to update your fork with the latest upstream changes, you'll need to first fetch the upstream repo's branches and latest commits to bring them into your repository:
 
+```shell
+# Fetch from upstream remote
+git fetch upstream
+
+# View all branches, including those from upstream
+git branch -va
+```
+
+Now, checkout your own master branch and merge the upstream repo's master branch:
+
+```shell
+# Checkout your master branch and merge upstream
+git checkout master
+git merge upstream/master
+```
+
+If there are no unique commits locally, git will simply perform a fast-forward. However, if you've been making changes, you may have to deal with conflicts. When doing so, be careful to respect the changes made upstream.
+
+Now, your local master branch is up-to-date with everything modified upstream.
+
+## Doing Your Work
+
+## Submitting a Pull Request
+
+## Accepting and Merging a Pull Request
 
 **Sources**
-* [GitHub - Syncing a fork](https://help.github.com/articles/syncing-a-fork)
+* [GitHub - Fork a Repo](https://help.github.com/articles/fork-a-repo)
+* [GitHub - Syncing a Fork](https://help.github.com/articles/syncing-a-fork)
