@@ -6,10 +6,24 @@ In an attempt to coallate this information for myself and others, this short tut
 
 Just head over to the GitHub page and click the "Fork" button. It's just that simple. Once you've done that, you can use your favorite Git client to clone your repo or just head straight to the command line:
 
-```Shell
+```shell
+# Clone your fork to your local machine
 $ git clone git@github.com:USERNAME/FORKED-PROJECT.git
 ```
 
 ## Keeping Your Fork Up to Date
 
-While this isn't an absolutely necessary step, if you plan on doing anything more than just a tiny quick fix, you'll want to make sure you keep your fork up to date by tracking the original "upstream" repo that you forked.
+While this isn't an absolutely necessary step, if you plan on doing anything more than just a tiny quick fix, you'll want to make sure you keep your fork up to date by tracking the original "upstream" repo that you forked. To do this, you'll need to add a remote:
+
+```shell
+# Add upstream repo to list of remotes
+$ git remote add upstream https://github.com/UPSTREAM-USER/ORIGINAL-PROJECT.git
+
+# Verify the new remote
+$ git remote -v
+```
+
+
+
+**Sources**
+* [GitHub - Syncing a fork](https://help.github.com/articles/syncing-a-fork)
