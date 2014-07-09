@@ -139,6 +139,12 @@ git merge newfeature
 git push origin master
 ```
 
+Now that you're done with the development branch, you're free to delete it.
+
+```shell
+git branch -d newfeature
+```
+
 **Sources**
 * [GitHub - Fork a Repo](https://help.github.com/articles/fork-a-repo)
 * [GitHub - Syncing a Fork](https://help.github.com/articles/syncing-a-fork)
