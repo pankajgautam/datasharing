@@ -41,7 +41,7 @@ git checkout master
 git merge upstream/master
 ```
 
-If there are no unique commits locally, git will simply perform a fast-forward. However, if you have been making changes (in the vast majority of cases you probably shouldn't be), you may have to deal with conflicts. When doing so, be careful to respect the changes made upstream.
+If there are no unique commits on the local master branch, git will simply perform a fast-forward. However, if you have been making changes on master (in the vast majority of cases you probably shouldn't be - [see the next section](#Doing Your Work), you may have to deal with conflicts. When doing so, be careful to respect the changes made upstream.
 
 Now, your local master branch is up-to-date with everything modified upstream.
 
@@ -99,6 +99,8 @@ This will open up a text editor where you can specify which commits to squash.
 Once you've committed all of you're changes and pushed them to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes on your development branch and update.
 
 ## Accepting and Merging a Pull Request
+
+Take note that unlike the previous sections which were written from the perspective of someone that created a fork and generated a pull request, this section is written from the perspective of the original repository owner who is handling an incoming pull request. Thus, where the "forker" was referring to the original repository as `upstream`, we're now looking at it as the owner of that original repository and the standard `origin` remote.
 
 ### Checking Out and Testing Pull Requests
 Open up the `.git/config` file and add a new line under `[remote "orgin"]`:
